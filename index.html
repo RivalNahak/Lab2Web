@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Mahasiswa - Praktikum 2 HTML Lanjutan</title>
+  <style>
+    body { font-family: system-ui, "Segoe UI", Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 16px; color: #1f2937; line-height: 1.5; }
+    nav a { margin-right: 12px; }
+    section { border-top: 2px solid #dce8f7; padding: 12px 0 20px; }
+    table { border-collapse: collapse; margin: 8px 0; }
+    th, td { padding: 6px 12px; }
+    caption { font-weight: 600; padding: 4px; }
+    label { display: inline-block; margin-top: 4px; }
+    input:user-invalid, select:user-invalid, textarea:user-invalid { outline: 2px solid #b42318; }
+    #formValidasi label { display: block; margin-top: 10px; }
+    aside { background: #e6f1ff; padding: 8px 12px; border-left: 4px solid #3478c8; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Portal Mahasiswa</h1>
+  <p>Praktikum 2: HTML Lanjutan (tabel, form, semantic HTML, multimedia, validasi)</p>
+</header>
+
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="#latihan1">Tabel</a>
+  <a href="#latihan3">Form</a>
+  <a href="#latihan6">Validasi</a>
+  <a href="#latihan7">Semantic</a>
+  <a href="#latihan8">Multimedia</a>
+  <a href="biodata.html">Proyek Mini: Biodata</a>
+</nav>
+
+<main>
+
+  <!-- Langkah 1 -->
+  <section id="latihan1">
+    <h2>1. Tabel Data Mahasiswa</h2>
+    <table border="1">
+      <tr><th>NIM</th><th>Nama</th><th>Program Studi</th></tr>
+      <tr><td>31241001</td><td>Andi</td><td>Teknik Informatika</td></tr>
+      <tr><td>31241002</td><td>Budi</td><td>Teknik Informatika</td></tr>
+      <tr><td>31241003</td><td>Citra</td><td>Sistem Informasi</td></tr>
+      <tr><td>31241004</td><td>Dewi</td><td>Teknik Informatika</td></tr>
+    </table>
+  </section>
+
+  <!-- Langkah 2 -->
+  <section id="latihan2">
+    <h2>2. Tabel dengan thead, tbody, dan tfoot</h2>
+    <table border="1">
+      <caption>Nilai Praktikum</caption>
+      <thead><tr><th>No</th><th>Nama</th><th>Nilai</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Andi</td><td>85</td></tr>
+        <tr><td>2</td><td>Budi</td><td>90</td></tr>
+        <tr><td>3</td><td>Citra</td><td>88</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Rata-rata</td><td>87,67</td></tr></tfoot>
+    </table>
+  </section>
+
+  <!-- Langkah 3 -->
+  <section id="latihan3">
+    <h2>3. Form Registrasi Mahasiswa</h2>
+    <form>
+      <label for="reg-nama">Nama Lengkap</label><br>
+      <input type="text" id="reg-nama" name="nama"><br><br>
+      <label for="reg-email">Email</label><br>
+      <input type="email" id="reg-email" name="email"><br><br>
+      <label for="reg-password">Password</label><br>
+      <input type="password" id="reg-password" name="password"><br><br>
+      <label for="reg-tanggal">Tanggal Lahir</label><br>
+      <input type="date" id="reg-tanggal" name="tanggal"><br><br>
+      <button type="submit">Daftar</button>
+      <button type="reset">Reset</button>
+    </form>
+  </section>
+
+  <!-- Langkah 4 -->
+  <section id="latihan4">
+    <h2>4. Radio Button dan Checkbox</h2>
+    <h3>Jenis Kelamin</h3>
+    <input type="radio" id="laki" name="jk" value="L">
+    <label for="laki">Laki-laki</label>
+    <input type="radio" id="perempuan" name="jk" value="P">
+    <label for="perempuan">Perempuan</label>
+
+    <h3>Keahlian</h3>
+    <input type="checkbox" id="html" name="skill" value="HTML">
+    <label for="html">HTML</label>
+    <input type="checkbox" id="css" name="skill" value="CSS">
+    <label for="css">CSS</label>
+    <input type="checkbox" id="js" name="skill" value="JavaScript">
+    <label for="js">JavaScript</label>
+  </section>
+
+  <!-- Langkah 5 -->
+  <section id="latihan5">
+    <h2>5. Select dan Textarea</h2>
+    <label for="sel-prodi">Program Studi</label>
+    <select id="sel-prodi" name="prodi">
+      <option value="">-- Pilih Prodi --</option>
+      <option value="ti">Teknik Informatika</option>
+      <option value="si">Sistem Informasi</option>
+    </select>
+    <br><br>
+    <label for="sel-alamat">Alamat</label><br>
+    <textarea id="sel-alamat" name="alamat" rows="5" cols="40"></textarea>
+  </section>
+
+  <!-- Langkah 6 -->
+  <section id="latihan6">
+    <h2>6. Validasi Form Dasar</h2>
+    <form id="formValidasi">
+      <label for="val-nama">Nama</label>
+      <input type="text" id="val-nama" name="nama" required minlength="3">
+      <br>
+      <label for="val-email">Email</label>
+      <input type="email" id="val-email" name="email" required>
+      <br>
+      <label for="val-umur">Umur (17-60)</label>
+      <input type="number" id="val-umur" name="umur" min="17" max="60" required>
+      <br><br>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Langkah 7: semantic HTML (seluruh halaman memakai header, nav, main, section, article, aside, footer) -->
+  <section id="latihan7">
+    <h2>7. Semantic HTML: Informasi Akademik</h2>
+    <article>
+      <h3>Praktikum HTML Lanjutan</h3>
+      <p>Mahasiswa mempelajari tabel, form, semantic HTML, multimedia, dan validasi.</p>
+    </article>
+    <aside>Informasi tambahan mahasiswa.</aside>
+  </section>
+
+  <!-- Langkah 8 -->
+  <section id="latihan8">
+    <h2>8. Multimedia</h2>
+    <h3>Audio</h3>
+    <audio controls>
+      <source src="media/audio.mp3" type="audio/mpeg">
+      Browser tidak mendukung audio.
+    </audio>
+    <h3>Video</h3>
+    <video controls width="480">
+      <source src="media/video.mp4" type="video/mp4">
+      <source src="media/video.webm" type="video/webm">
+      Browser tidak mendukung video.
+    </video>
+  </section>
+
+</main>
+
+<footer><p>&copy; 2026 Teknik Informatika</p></footer>
+
+</body>
+</html>

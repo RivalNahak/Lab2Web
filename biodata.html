@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Mahasiswa</title>
+  <style>
+    body { font-family: system-ui, "Segoe UI", Arial, sans-serif; max-width: 760px; margin: 0 auto; padding: 16px; color: #1f2937; line-height: 1.5; }
+    nav a { margin-right: 12px; }
+    section { border-top: 2px solid #dce8f7; padding: 12px 0 20px; }
+    table { border-collapse: collapse; }
+    th, td { padding: 6px 14px; text-align: left; }
+    input:user-invalid, select:user-invalid, textarea:user-invalid { outline: 2px solid #b42318; }
+  </style>
+</head>
+<body>
+
+<header><h1>Biodata Mahasiswa</h1></header>
+
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="#biodata">Biodata</a>
+  <a href="#form">Form</a>
+  <a href="#media">Video Perkenalan</a>
+</nav>
+
+<main>
+
+  <section id="biodata">
+    <h2>Data Mahasiswa</h2>
+    <table border="1">
+      <tr><th>Data</th><th>Keterangan</th></tr>
+      <tr><td>NIM</td><td>31241001</td></tr>
+      <tr><td>Nama</td><td>Nama Mahasiswa</td></tr>
+      <tr><td>Program Studi</td><td>Teknik Informatika</td></tr>
+    </table>
+  </section>
+
+  <section id="form">
+    <h2>Form Biodata</h2>
+    <form>
+      <label for="bio-nama">Nama</label>
+      <input type="text" id="bio-nama" name="nama" required minlength="3">
+      <br><br>
+      <label for="bio-email">Email</label>
+      <input type="email" id="bio-email" name="email" required>
+      <br><br>
+      <label for="bio-prodi">Program Studi</label>
+      <select id="bio-prodi" name="prodi" required>
+        <option value="">-- Pilih --</option>
+        <option value="ti">Teknik Informatika</option>
+        <option value="si">Sistem Informasi</option>
+      </select>
+      <br><br>
+      <label for="bio-alamat">Alamat</label><br>
+      <textarea id="bio-alamat" name="alamat" rows="4" cols="40" required></textarea>
+      <br><br>
+      <button type="submit">Simpan</button>
+      <button type="reset">Reset</button>
+    </form>
+  </section>
+
+  <section id="media">
+    <h2>Video Perkenalan</h2>
+    <video controls width="480">
+      <source src="media/video.mp4" type="video/mp4">
+      <source src="media/video.webm" type="video/webm">
+      Browser tidak mendukung video.
+    </video>
+  </section>
+
+</main>
+
+<footer><p>&copy; 2026 Teknik Informatika</p></footer>
+
+</body>
+</html>
